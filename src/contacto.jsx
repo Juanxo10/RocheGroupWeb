@@ -3,7 +3,7 @@ import Navbar from './navbar'
 import Footer from './footer'
 
 const CONTACT_EMAIL = 'gruporochecontacto@gmail.com'
-const WEB3FORMS_ACCESS_KEY = '1eae4919-82e1-4cd5-8f21-3ff1f7ba5cb1'
+const WEB3FORMS_ACCESS_KEY = 'ba66fd5d-1394-43f9-9193-5f19f6284e6d'
 
 const contactInfo = [
   {
