@@ -110,7 +110,7 @@ function Inicio() {
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             {/* Hero Content */}
             <div
-              className="bg-background/90 backdrop-blur-sm shadow-xl rounded-3xl p-6 -mx-2 md:bg-transparent md:backdrop-blur-none md:shadow-none md:rounded-none md:p-0 md:mx-0 lg:max-w-2xl reveal"
+              className="bg-background/60 backdrop-blur-md shadow-xl rounded-3xl p-6 -mx-2 md:bg-transparent md:backdrop-blur-none md:shadow-none md:rounded-none md:p-0 md:mx-0 lg:max-w-2xl reveal"
               id="hero-text"
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full mb-8">
