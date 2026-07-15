@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from './navbar'
 import Footer from './footer'
+import { useSeo } from './useSeo'
 
 const techStack = [
   {
@@ -32,6 +33,12 @@ const techStack = [
 ]
 
 function Inicio() {
+  useSeo({
+    title: 'Inicio',
+    description:
+      'Roché Group desarrolla páginas web, aplicaciones móviles y software a la medida con tecnología moderna y trato directo con el equipo.',
+  })
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -121,9 +128,12 @@ function Inicio() {
                   Solicita tu cotización gratis
                   <span className="material-symbols-outlined">arrow_forward</span>
                 </Link>
-                <button className="bg-pure-white border border-slate-gray/20 text-deep-indigo px-10 py-4 rounded-full font-label-md text-label-md hover:bg-surface-container-low transition-all duration-300">
-                  Ver portafolio
-                </button>
+                <Link
+                  to="/servicios"
+                  className="bg-pure-white border border-slate-gray/20 text-deep-indigo px-10 py-4 rounded-full font-label-md text-label-md hover:bg-surface-container-low transition-all duration-300"
+                >
+                  Ver servicios
+                </Link>
               </div>
 
               {/* Differentiators */}

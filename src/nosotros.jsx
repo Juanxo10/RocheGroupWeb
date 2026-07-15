@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import Navbar from './navbar'
 import Footer from './footer'
+import { useSeo } from './useSeo'
 
 const values = [
   {
@@ -31,6 +32,12 @@ const values = [
 ]
 
 function Nosotros() {
+  useSeo({
+    title: 'Nosotros',
+    description:
+      'Conoce a Roché Group: un equipo comprometido con la innovación, la calidad y la transparencia en cada proyecto digital.',
+  })
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {

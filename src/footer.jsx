@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import nousIcon from './assets/nous-icon.png'
+import rocheIcon from './assets/roche-icon.png'
 
 const companyLinks = [
   { label: 'Inicio', to: '/' },
@@ -19,7 +19,7 @@ function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-16 max-w-container-max mx-auto">
         <div className="col-span-1 md:col-span-1">
           <Link to="/" className="flex items-center gap-2 mb-6">
-            <img src={nousIcon} alt="Roché Group" className="h-8 w-8 object-contain" />
+            <img src={rocheIcon} alt="Roché Group" className="h-8 w-8 object-contain" />
             <span className="font-headline-md text-headline-md font-bold text-secondary-container">
               Roché Group
             </span>

@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from './navbar'
 import Footer from './footer'
+import { useSeo } from './useSeo'
 
 const services = [
   {
@@ -74,6 +75,12 @@ const checklist = [
 ]
 
 function Servicios() {
+  useSeo({
+    title: 'Servicios',
+    description:
+      'Desarrollo web, apps móviles, software a medida, APIs, diseño UI/UX y soporte continuo. Conoce los servicios digitales de Roché Group.',
+  })
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -247,9 +254,12 @@ function Servicios() {
               >
                 Empezar Proyecto
               </Link>
-              <button className="border border-white/30 text-pure-white px-8 py-4 rounded-full font-label-md text-label-md hover:bg-white/10 transition-all">
-                Ver Casos de Éxito
-              </button>
+              <Link
+                to="/nosotros"
+                className="border border-white/30 text-pure-white px-8 py-4 rounded-full font-label-md text-label-md hover:bg-white/10 transition-all"
+              >
+                Conoce al equipo
+              </Link>
             </div>
           </div>
         </section>

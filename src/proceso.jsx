@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from './navbar'
 import Footer from './footer'
+import { useSeo } from './useSeo'
 
 const steps = [
   {
@@ -65,6 +66,12 @@ const faqs = [
 ]
 
 function Proceso() {
+  useSeo({
+    title: 'Proceso',
+    description:
+      'Consulta, propuesta, diseño, desarrollo, pruebas, entrega y soporte: así es el proceso de trabajo de Roché Group, paso a paso.',
+  })
+
   const [openFaq, setOpenFaq] = useState(null)
   const progressRef = useRef(null)
 

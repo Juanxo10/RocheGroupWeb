@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Navbar from './navbar'
 import Footer from './footer'
+import { useSeo } from './useSeo'
 
 const CONTACT_EMAIL = 'gruporochecontacto@gmail.com'
 const WEB3FORMS_ACCESS_KEY = 'ba66fd5d-1394-43f9-9193-5f19f6284e6d'
@@ -24,6 +25,12 @@ const contactInfo = [
 ]
 
 function Contacto() {
+  useSeo({
+    title: 'Contacto',
+    description:
+      'Escríbenos y te respondemos en menos de 24 horas. Cuéntanos tu idea y hablemos directo con el equipo de Roché Group.',
+  })
+
   const [status, setStatus] = useState('idle')
 
   async function handleSubmit(event) {
