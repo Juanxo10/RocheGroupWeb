@@ -14,7 +14,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <nav className="navbar-font fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-white/20 shadow-sm">
+    <nav className="navbar-font fixed top-0 left-0 w-full z-50 bg-white border-b border-white/20 shadow-sm">
       <style>{`
         .navbar-font, .navbar-font * {
           font-family: 'Plus Jakarta Sans', sans-serif !important;
