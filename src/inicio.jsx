@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Navbar from './navbar'
 import Footer from './footer'
 import { useSeo } from './useSeo'
+import heroImage from './assets/imagenn.png'
 
 const techStack = [
   {
@@ -98,13 +99,20 @@ function Inicio() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-          <div className="absolute top-0 right-0 -z-10 w-2/3 h-full opacity-30" />
-          <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <section className="relative isolate pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+          <div className="absolute inset-0 -z-10">
+            <img
+              src={heroImage}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover object-right"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
+          </div>
 
-          <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             {/* Hero Content */}
-            <div className="lg:col-span-7 reveal" id="hero-text">
+            <div className="lg:max-w-2xl reveal" id="hero-text">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full mb-8">
                 <span className="material-symbols-outlined text-[18px]">auto_awesome</span>
                 <span className="font-label-md text-label-md">Innovación Digital de Elite</span>
@@ -152,32 +160,21 @@ function Inicio() {
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Visual Asset */}
-            <div className="lg:col-span-5 relative reveal" style={{ transitionDelay: '200ms' }}>
-              <div className="relative z-10 w-full aspect-square rounded-[40px] overflow-hidden shadow-2xl animate-float">
-                <img
-                  className="w-full h-full object-cover"
-                  alt="Escultura digital 3D abstracta de alta gama que representa la innovación tecnológica, con cintas cristalinas en tonos azul primario e índigo profundo."
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxpbdlE-Mtr6azigOxZ-NL2KZCTTdqlvO7jcmBi5vXqHLz6-xQt5IPmAN8tfm_KYuCNEifyeBj_LvITGsxXjZarZwyrqR6A3dMPxrPgiKXBNw8DN1wVh4cVRfIq0xg34DkDG61hr85w_aIrNbIDzs_wUQERGi0qCnn1NBZ5P7LvEA5qCvpQCuwMZnEtmw-LIt-j4LkzwTy4uTU76_l1cMT4j6KsM15S6cA0PwSVRnLX2eYS7hx0zXcz54GhsHKz9MvhiyT18Pwp_g"
-                />
-                {/* Floating Glass Card */}
-                <div className="absolute bottom-6 left-6 right-6 glass-card p-6 rounded-2xl flex items-center gap-4">
-                  <div className="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center">
-                    <span className="material-symbols-outlined text-on-secondary-container">
-                      bolt
-                    </span>
-                  </div>
-                  <div>
-                    <div className="font-label-md text-label-md text-deep-indigo">
-                      Software de Alto Impacto
-                    </div>
-                    <div className="text-[12px] text-slate-gray">Desarrollo ágil &amp; escalable</div>
-                  </div>
-                </div>
+          {/* Floating Glass Card */}
+          <div
+            className="hidden lg:flex absolute bottom-16 right-[8%] xl:right-[12%] w-72 glass-card p-6 rounded-2xl items-center gap-4 reveal animate-float"
+            style={{ transitionDelay: '200ms' }}
+          >
+            <div className="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center">
+              <span className="material-symbols-outlined text-on-secondary-container">bolt</span>
+            </div>
+            <div>
+              <div className="font-label-md text-label-md text-deep-indigo">
+                Software de Alto Impacto
               </div>
-              {/* Decorative back blob */}
-              <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl -z-10" />
+              <div className="text-[12px] text-slate-gray">Desarrollo ágil &amp; escalable</div>
             </div>
           </div>
         </section>
