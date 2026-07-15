@@ -110,14 +110,14 @@ function Inicio() {
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             {/* Hero Content */}
             <div
-              className="bg-background/60 backdrop-blur-md shadow-xl rounded-3xl p-6 -mx-2 md:bg-transparent md:backdrop-blur-none md:shadow-none md:rounded-none md:p-0 md:mx-0 lg:max-w-2xl reveal"
+              className="bg-background/45 backdrop-blur-md shadow-xl rounded-3xl p-6 md:bg-transparent md:backdrop-blur-none md:shadow-none md:rounded-none md:p-0 lg:max-w-2xl reveal"
               id="hero-text"
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full mb-8">
                 <span className="material-symbols-outlined text-[18px]">auto_awesome</span>
                 <span className="font-label-md text-label-md">Innovación Digital de Elite</span>
               </div>
-              <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-deep-indigo mb-6 tracking-tight leading-[1.1]">
+              <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-deep-indigo mb-6 tracking-tight leading-[1.1] break-words">
                 RovidionGroup —{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-tertiary">
                   Convertimos ideas
