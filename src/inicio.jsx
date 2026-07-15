@@ -104,15 +104,12 @@ function Inicio() {
             src={heroImage}
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 -z-10 w-full h-full object-cover object-right"
+            className="hidden md:block absolute inset-0 -z-10 w-full h-full object-cover object-right"
           />
 
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             {/* Hero Content */}
-            <div
-              className="bg-background/45 backdrop-blur-md shadow-xl rounded-3xl p-6 md:bg-transparent md:backdrop-blur-none md:shadow-none md:rounded-none md:p-0 lg:max-w-2xl reveal"
-              id="hero-text"
-            >
+            <div className="lg:max-w-2xl reveal" id="hero-text">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full mb-8">
                 <span className="material-symbols-outlined text-[18px]">auto_awesome</span>
                 <span className="font-label-md text-label-md">Innovación Digital de Elite</span>
@@ -142,6 +139,15 @@ function Inicio() {
                 >
                   Ver servicios
                 </Link>
+              </div>
+
+              {/* Mobile Visual Asset */}
+              <div className="md:hidden mt-10 rounded-[28px] overflow-hidden shadow-xl">
+                <img
+                  src={heroImage}
+                  alt="Ilustración de desarrollo de software: sitios web, aplicaciones móviles y servicios en la nube."
+                  className="w-full h-64 object-cover object-right"
+                />
               </div>
 
               {/* Differentiators */}
