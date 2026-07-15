@@ -100,15 +100,12 @@ function Inicio() {
       <main>
         {/* Hero Section */}
         <section className="relative isolate pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-          <div className="absolute inset-0 -z-10">
-            <img
-              src={heroImage}
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 w-full h-full object-cover object-right"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
-          </div>
+          <img
+            src={heroImage}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 -z-10 w-full h-full object-cover object-right"
+          />
 
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             {/* Hero Content */}
@@ -124,14 +121,14 @@ function Inicio() {
                 </span>{' '}
                 en soluciones digitales
               </h1>
-              <p className="font-body-lg text-body-lg text-slate-gray mb-10 max-w-xl">
+              <p className="font-body-lg text-body-lg text-deep-indigo/80 font-medium mb-10 max-w-xl">
                 Desarrollamos páginas web, aplicaciones móviles y software a la medida para
                 impulsar tu negocio al siguiente nivel con tecnología de vanguardia.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
                   to="/contacto"
-                  className="bg-gradient-to-r from-primary to-tertiary text-pure-white px-10 py-4 rounded-full font-label-md text-label-md hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-3"
+                  className="bg-gradient-to-r from-primary to-tertiary text-pure-white px-10 py-4 rounded-full font-label-md text-label-md shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-3"
                 >
                   Solicita tu cotización gratis
                   <span className="material-symbols-outlined">arrow_forward</span>
