@@ -35,7 +35,7 @@ function Nosotros() {
   useSeo({
     title: 'Nosotros',
     description:
-      'Conoce a Roché Group: un equipo comprometido con la innovación, la calidad y la transparencia en cada proyecto digital.',
+      'Conoce a Roche Code: un equipo comprometido con la innovación, la calidad y la transparencia en cada proyecto digital.',
   })
 
   useEffect(() => {
@@ -101,7 +101,7 @@ function Nosotros() {
                 digital.
               </h1>
               <p className="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl">
-                En Roché Group, nuestro equipo vive y respira tecnología. No solo desarrollamos
+                En Roche Code, nuestro equipo vive y respira tecnología. No solo desarrollamos
                 software; creamos experiencias digitales que impulsan el crecimiento. Nos apasiona
                 enfrentar desafíos complejos con soluciones elegantes, fusionando precisión
                 técnica con una visión creativa sin límites.

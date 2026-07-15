@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://rochegroup.com/</loc>
+    <loc>https://rochecode.com/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://rochegroup.com/nosotros</loc>
+    <loc>https://rochecode.com/nosotros</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rochegroup.com/servicios</loc>
+    <loc>https://rochecode.com/servicios</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rochegroup.com/proceso</loc>
+    <loc>https://rochecode.com/proceso</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rochegroup.com/contacto</loc>
+    <loc>https://rochecode.com/contacto</loc>
     <priority>0.8</priority>
   </url>
 </urlset>

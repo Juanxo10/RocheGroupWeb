@@ -78,7 +78,7 @@ function Servicios() {
   useSeo({
     title: 'Servicios',
     description:
-      'Desarrollo web, apps móviles, software a medida, APIs, diseño UI/UX y soporte continuo. Conoce los servicios digitales de Roché Group.',
+      'Desarrollo web, apps móviles, software a medida, APIs, diseño UI/UX y soporte continuo. Conoce los servicios digitales de Roche Code.',
   })
 
   useEffect(() => {
@@ -203,7 +203,7 @@ function Servicios() {
             <div>
               <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-indigo mb-8">
                 ¿Por qué elegir <br />
-                Roché Group?
+                Roche Code?
               </h2>
               <div className="space-y-6">
                 {checklist.map((item) => (

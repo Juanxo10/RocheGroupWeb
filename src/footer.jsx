@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import rocheIcon from './assets/roche-icon.png'
+import rocheIcon from './assets/rochecode-icon.png'
 
 const companyLinks = [
   { label: 'Inicio', to: '/' },
@@ -19,9 +19,9 @@ function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-16 max-w-container-max mx-auto">
         <div className="col-span-1 md:col-span-1">
           <Link to="/" className="flex items-center gap-2 mb-6">
-            <img src={rocheIcon} alt="Roché Group" className="h-8 w-8 object-contain" />
+            <img src={rocheIcon} alt="Roche Code" className="h-8 w-8 object-contain" />
             <span className="font-headline-md text-headline-md font-bold text-secondary-container">
-              Roché Group
+              Roche Code
             </span>
           </Link>
           <p className="text-on-tertiary-container/80 font-body-md text-body-md mb-8">
@@ -82,7 +82,7 @@ function Footer() {
         </div>
       </div>
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 border-t border-white/10 text-center text-on-tertiary-container/60 font-label-md text-label-md">
-        © 2026 Roché Group. Todos los derechos reservados.
+        © 2026 Roche Code. Todos los derechos reservados.
       </div>
     </footer>
   )
