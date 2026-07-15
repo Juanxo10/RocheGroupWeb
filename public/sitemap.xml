@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://rochecode.com/</loc>
+    <loc>https://rovidiongroup.com/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://rochecode.com/nosotros</loc>
+    <loc>https://rovidiongroup.com/nosotros</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rochecode.com/servicios</loc>
+    <loc>https://rovidiongroup.com/servicios</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rochecode.com/proceso</loc>
+    <loc>https://rovidiongroup.com/proceso</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rochecode.com/contacto</loc>
+    <loc>https://rovidiongroup.com/contacto</loc>
     <priority>0.8</priority>
   </url>
 </urlset>

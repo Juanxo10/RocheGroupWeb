@@ -28,7 +28,7 @@ function Contacto() {
   useSeo({
     title: 'Contacto',
     description:
-      'Escríbenos y te respondemos en menos de 24 horas. Cuéntanos tu idea y hablemos directo con el equipo de Roché Code.',
+      'Escríbenos y te respondemos en menos de 24 horas. Cuéntanos tu idea y hablemos directo con el equipo de RovidionGroup.',
   })
 
   const [status, setStatus] = useState('idle')
@@ -137,7 +137,7 @@ function Contacto() {
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                   <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
-                  <input type="hidden" name="subject" value="Nuevo mensaje desde Roché Code" />
+                  <input type="hidden" name="subject" value="Nuevo mensaje desde RovidionGroup" />
                   <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

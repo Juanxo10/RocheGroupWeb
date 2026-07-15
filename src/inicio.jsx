@@ -36,7 +36,7 @@ function Inicio() {
   useSeo({
     title: 'Inicio',
     description:
-      'Roché Code desarrolla páginas web, aplicaciones móviles y software a la medida con tecnología moderna y trato directo con el equipo.',
+      'RovidionGroup desarrolla páginas web, aplicaciones móviles y software a la medida con tecnología moderna y trato directo con el equipo.',
   })
 
   useEffect(() => {
@@ -110,7 +110,7 @@ function Inicio() {
                 <span className="font-label-md text-label-md">Innovación Digital de Elite</span>
               </div>
               <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-deep-indigo mb-6 tracking-tight leading-[1.1]">
-                Roché Code —{' '}
+                RovidionGroup —{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-tertiary">
                   Convertimos ideas
                 </span>{' '}
