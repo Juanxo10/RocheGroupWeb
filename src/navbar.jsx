@@ -22,9 +22,9 @@ function Navbar() {
       `}</style>
       <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
         <Link to="/" className="flex items-center gap-2 md:gap-3" onClick={() => setMenuOpen(false)}>
-          <img src={rocheIcon} alt="Roche Code" className="h-9 w-9 md:h-10 md:w-10 object-contain" />
+          <img src={rocheIcon} alt="Roché Code" className="h-9 w-9 md:h-10 md:w-10 object-contain" />
           <span className="hidden sm:block font-headline-md text-lg md:text-headline-md font-bold text-deep-indigo">
-            Roche Code
+            Roché Code
           </span>
         </Link>
         <div className="hidden md:flex items-center gap-8">

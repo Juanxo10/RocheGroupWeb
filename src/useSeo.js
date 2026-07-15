@@ -22,7 +22,7 @@ function setMetaProperty(property, content) {
 
 export function useSeo({ title, description }) {
   useEffect(() => {
-    const fullTitle = `${title} | Roche Code`
+    const fullTitle = `${title} | Roché Code`
     document.title = fullTitle
     setMetaTag('description', description)
     setMetaProperty('og:title', fullTitle)

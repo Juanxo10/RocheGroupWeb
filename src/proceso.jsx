@@ -69,7 +69,7 @@ function Proceso() {
   useSeo({
     title: 'Proceso',
     description:
-      'Consulta, propuesta, diseño, desarrollo, pruebas, entrega y soporte: así es el proceso de trabajo de Roche Code, paso a paso.',
+      'Consulta, propuesta, diseño, desarrollo, pruebas, entrega y soporte: así es el proceso de trabajo de Roché Code, paso a paso.',
   })
 
   const [openFaq, setOpenFaq] = useState(null)
