@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import rocheIcon from './assets/rovidiongroup-icon.png'
+import rocheIcon from './assets/logosolo-cropped.png'
 
 const navLinks = [
   { label: 'Inicio', to: '/' },

@@ -8,10 +8,7 @@ const companyLinks = [
   { label: 'Proceso', to: '/proceso' },
 ]
 
-const resourceLinks = [
-  { label: 'FAQ', to: '/proceso#faq' },
-  { label: 'Contacto', to: '/contacto' },
-]
+const resourceLinks = [{ label: 'Contacto', to: '/contacto' }]
 
 function Footer() {
   return (

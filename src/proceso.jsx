@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from './navbar'
 import Footer from './footer'
@@ -42,29 +42,6 @@ const steps = [
   },
 ]
 
-const faqs = [
-  {
-    question: '¿Cuánto tiempo toma desarrollar un proyecto promedio?',
-    answer:
-      'Los plazos varían según la complejidad. Un MVP (Producto Mínimo Viable) suele tomar entre 8 y 12 semanas, mientras que plataformas corporativas robustas pueden requerir de 4 a 6 meses de desarrollo intensivo.',
-  },
-  {
-    question: '¿Ofrecen soporte después del lanzamiento?',
-    answer:
-      'Sí, incluimos un periodo de garantía de 30 días post-lanzamiento para correcciones menores y ofrecemos planes de mantenimiento mensual para actualizaciones, seguridad y escalabilidad continua.',
-  },
-  {
-    question: '¿Qué tecnologías utilizan en el desarrollo?',
-    answer:
-      'Nos especializamos en el ecosistema moderno: React, Next.js, Node.js, Python y arquitecturas de nube (AWS/Google Cloud). Siempre seleccionamos la tecnología que mejor se adapte a tus necesidades técnicas y de negocio.',
-  },
-  {
-    question: '¿Cómo se gestionan los pagos del proyecto?',
-    answer:
-      'Trabajamos típicamente con un esquema de hitos: un pago inicial para reserva y diseño, seguido de entregas parciales de desarrollo, y un pago final contra el despliegue a producción.',
-  },
-]
-
 function Proceso() {
   useSeo({
     title: 'Proceso',
@@ -72,7 +49,6 @@ function Proceso() {
       'Consulta, propuesta, diseño, desarrollo, pruebas, entrega y soporte: así es el proceso de trabajo de RovidionGroup, paso a paso.',
   })
 
-  const [openFaq, setOpenFaq] = useState(null)
   const progressRef = useRef(null)
 
   useEffect(() => {
@@ -108,10 +84,6 @@ function Proceso() {
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
-  function toggleFaq(index) {
-    setOpenFaq((current) => (current === index ? null : index))
-  }
 
   return (
     <div className="bg-background text-on-background font-body-md text-body-md overflow-x-hidden">
@@ -189,45 +161,6 @@ function Proceso() {
                     {step.title}
                   </h3>
                   <p className="text-slate-gray text-center text-sm px-4">{step.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="py-24 bg-surface-container-low" id="faq">
-          <div className="px-5 md:px-margin-desktop max-w-4xl mx-auto">
-            <div className="text-center mb-16 reveal">
-              <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-indigo mb-4">
-                Preguntas Frecuentes
-              </h2>
-              <p className="font-body-lg text-body-lg text-slate-gray">
-                Todo lo que necesitas saber sobre trabajar con nosotros.
-              </p>
-            </div>
-            <div className="space-y-4">
-              {faqs.map((faq, i) => (
-                <div
-                  key={faq.question}
-                  className={`accordion-item glass-card rounded-2xl reveal shadow-sm hover:shadow-md transition-shadow ${
-                    openFaq === i ? 'active' : ''
-                  }`}
-                >
-                  <button
-                    className="w-full text-left px-8 py-6 flex justify-between items-center outline-none focus:ring-2 focus:ring-primary/20 rounded-2xl"
-                    onClick={() => toggleFaq(i)}
-                  >
-                    <span className="font-body-lg font-semibold text-deep-indigo">
-                      {faq.question}
-                    </span>
-                    <span className="material-symbols-outlined text-slate-gray transition-transform duration-300 chevron-icon">
-                      expand_more
-                    </span>
-                  </button>
-                  <div className="accordion-content">
-                    <div className="px-8 pb-8 text-slate-gray font-body-md">{faq.answer}</div>
-                  </div>
                 </div>
               ))}
             </div>

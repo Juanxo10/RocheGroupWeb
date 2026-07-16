@@ -4,6 +4,7 @@ import Navbar from './navbar'
 import Footer from './footer'
 import { useSeo } from './useSeo'
 import heroImage from './assets/imagenn.png'
+import logoletra from './assets/logoletra-cropped.png'
 
 const techStack = [
   {
@@ -106,16 +107,24 @@ function Inicio() {
             aria-hidden="true"
             className="hidden md:block absolute inset-0 -z-10 w-full h-full object-cover object-right"
           />
+          <div
+            aria-hidden="true"
+            className="hidden md:block absolute inset-0 -z-10 bg-white/25"
+          />
 
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             {/* Hero Content */}
             <div className="lg:max-w-2xl reveal" id="hero-text">
+              <img
+                src={logoletra}
+                alt="RovidionGroup — Desarrollamos tus ideas"
+                className="h-20 md:h-24 w-auto mb-8"
+              />
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full mb-8">
                 <span className="material-symbols-outlined text-[18px]">auto_awesome</span>
                 <span className="font-label-md text-label-md">Innovación Digital de Elite</span>
               </div>
               <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-deep-indigo mb-6 tracking-tight leading-[1.1] break-words">
-                RovidionGroup —{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-tertiary">
                   Convertimos ideas
                 </span>{' '}
@@ -142,12 +151,13 @@ function Inicio() {
               </div>
 
               {/* Mobile Visual Asset */}
-              <div className="md:hidden mt-10 rounded-[28px] overflow-hidden shadow-xl">
+              <div className="md:hidden mt-10 rounded-[28px] overflow-hidden shadow-xl relative">
                 <img
                   src={heroImage}
                   alt="Ilustración de desarrollo de software: sitios web, aplicaciones móviles y servicios en la nube."
                   className="w-full h-64 object-cover object-right"
                 />
+                <div aria-hidden="true" className="absolute inset-0 bg-white/25" />
               </div>
 
               {/* Differentiators */}
