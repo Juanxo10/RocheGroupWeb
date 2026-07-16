@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import rocheIcon from './assets/logosolo-cropped.png'
+import rocheIcon from './assets/logosolo-transparent.png'
 
 const navLinks = [
   { label: 'Inicio', to: '/' },
@@ -21,11 +21,8 @@ function Navbar() {
         }
       `}</style>
       <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
-        <Link to="/" className="flex items-center gap-2 md:gap-3" onClick={() => setMenuOpen(false)}>
-          <img src={rocheIcon} alt="RovidionGroup" className="h-9 w-9 md:h-10 md:w-10 object-contain" />
-          <span className="hidden sm:block font-headline-md text-lg md:text-headline-md font-bold text-deep-indigo">
-            RovidionGroup
-          </span>
+        <Link to="/" className="flex items-center" onClick={() => setMenuOpen(false)}>
+          <img src={rocheIcon} alt="RovidionGroup" className="h-11 w-11 md:h-12 md:w-12 object-contain" />
         </Link>
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => {

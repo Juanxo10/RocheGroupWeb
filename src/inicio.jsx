@@ -4,7 +4,7 @@ import Navbar from './navbar'
 import Footer from './footer'
 import { useSeo } from './useSeo'
 import heroImage from './assets/imagenn.png'
-import logoletra from './assets/logoletra-cropped.png'
+import logoletra from './assets/logoletra-transparent.png'
 
 const techStack = [
   {
@@ -118,7 +118,7 @@ function Inicio() {
               <img
                 src={logoletra}
                 alt="RovidionGroup — Desarrollamos tus ideas"
-                className="h-20 md:h-24 w-auto mb-8"
+                className="h-24 md:h-28 w-auto mb-8 -ml-2"
               />
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full mb-8">
                 <span className="material-symbols-outlined text-[18px]">auto_awesome</span>
