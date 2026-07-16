@@ -118,13 +118,13 @@ function Inicio() {
               <img
                 src={logoletra}
                 alt="RovidionGroup — Desarrollamos tus ideas"
-                className="h-40 md:h-52 w-auto mb-8 -ml-2"
+                className="h-56 md:h-72 w-auto mb-8 -ml-2"
               />
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full mb-8">
                 <span className="material-symbols-outlined text-[18px]">auto_awesome</span>
                 <span className="font-label-md text-label-md">Innovación Digital de Elite</span>
               </div>
-              <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-deep-indigo mb-6 tracking-tight leading-[1.1] break-words">
+              <h1 className="font-display-lg font-extrabold text-[38px] md:text-[56px] text-deep-indigo mb-6 tracking-tight leading-[1.1] break-words">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-tertiary">
                   Convertimos ideas
                 </span>{' '}
