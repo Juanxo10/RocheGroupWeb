@@ -174,7 +174,7 @@ function Servicios() {
         </section>
 
         {/* Services Grid (Bento Style Layout) */}
-        <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-32">
+        <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-16 md:pb-32">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
             {services.map((service) => (
               <div
@@ -215,8 +215,8 @@ function Servicios() {
         </section>
 
         {/* Why Choose Us (Asymmetric Layout) */}
-        <section className="bg-surface-container-low dark:bg-[#0b1020] py-32 transition-colors duration-300">
-          <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <section className="bg-surface-container-low dark:bg-[#0b1020] py-16 md:py-32 transition-colors duration-300">
+          <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
             <div className="relative">
               <div className="absolute -top-10 -left-10 w-40 h-40 bg-secondary-container/20 blur-3xl rounded-full" />
               <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary-container/20 blur-3xl rounded-full" />
@@ -264,7 +264,7 @@ function Servicios() {
         </section>
 
         {/* CTA Section */}
-        <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-32">
+        <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-32">
           <div className="bg-deep-indigo rounded-3xl p-12 md:p-20 text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 blur-[100px] rounded-full" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/10 blur-[80px] rounded-full" />

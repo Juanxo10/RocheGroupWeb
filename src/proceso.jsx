@@ -130,7 +130,7 @@ function Proceso() {
 
       <main className="pt-24">
         {/* Hero Section for Process */}
-        <section className="relative py-24 px-5 md:px-margin-desktop max-w-container-max mx-auto text-center overflow-hidden">
+        <section className="relative py-12 md:py-24 px-5 md:px-margin-desktop max-w-container-max mx-auto text-center overflow-hidden">
           <div className="reveal">
             <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-deep-indigo dark:text-white mb-6">
               Nuestro <span className="text-primary dark:text-secondary-container">Proceso</span> de Trabajo
@@ -142,13 +142,13 @@ function Proceso() {
           </div>
 
           {/* Visual Horizontal Timeline (Desktop) / Vertical (Mobile) */}
-          <div className="mt-20 relative px-4">
+          <div className="mt-12 md:mt-20 relative px-4">
             {/* Timeline Desktop Connector */}
             <div className="hidden lg:block absolute top-10 left-0 w-full h-0.5 bg-surface-variant dark:bg-white/10 z-0">
               <div className="h-full bg-primary w-0" ref={progressRef} />
             </div>
 
-            <div className="flex flex-col lg:flex-row justify-between relative z-10 gap-12 lg:gap-4">
+            <div className="flex flex-col lg:flex-row justify-between relative z-10 gap-8 lg:gap-4">
               {steps.map((step, i) => (
                 <div
                   key={step.title}
@@ -172,7 +172,7 @@ function Proceso() {
         </section>
 
         {/* Final CTA Section */}
-        <section className="py-24 px-5 md:px-margin-desktop overflow-hidden">
+        <section className="py-16 md:py-24 px-5 md:px-margin-desktop overflow-hidden">
           <div className="max-w-container-max mx-auto reveal">
             <div className="relative bg-deep-indigo rounded-3xl p-12 md:p-24 text-center overflow-hidden">
               {/* Background Decoration */}

@@ -66,7 +66,7 @@ function Footer() {
           <h4 className="font-label-md text-label-md text-pure-white mb-6 uppercase tracking-wider">
             Contacto
           </h4>
-          <p className="text-on-tertiary-container/80 font-body-md text-body-md mb-4 break-all">
+          <p className="text-on-tertiary-container/80 font-body-md text-sm sm:text-body-md mb-4 break-words">
             gruporochecontacto@gmail.com
           </p>
           <Link

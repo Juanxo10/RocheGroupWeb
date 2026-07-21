@@ -186,7 +186,7 @@ function Nosotros() {
         {/* Values Section: Modern Grid */}
         <section className="px-6 md:px-margin-desktop py-24 md:py-32 max-w-container-max mx-auto">
           <div className="text-center mb-16 md:mb-24 reveal">
-            <h2 className="font-headline-lg text-headline-lg text-on-background dark:text-white mb-4">
+            <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background dark:text-white mb-4">
               Nuestros Valores
             </h2>
             <p className="font-body-md text-body-md text-slate-gray dark:text-slate-400 max-w-2xl mx-auto">
@@ -194,19 +194,19 @@ function Nosotros() {
               construimos.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
             {values.map((value, i) => (
               <div
                 key={value.title}
-                className="group p-8 bg-pure-white dark:bg-[#0b1020] rounded-2xl border border-surface-container dark:border-white/10 hover:shadow-xl transition-all duration-300 reveal"
+                className="group p-5 sm:p-6 lg:p-8 bg-pure-white dark:bg-[#0b1020] rounded-2xl border border-surface-container dark:border-white/10 hover:shadow-xl transition-all duration-300 reveal"
                 style={{ transitionDelay: `${(i + 1) * 100}ms` }}
               >
-                <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <span className="material-symbols-outlined text-primary dark:text-secondary-container text-5xl">
+                <div className="mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span className="material-symbols-outlined text-primary dark:text-secondary-container text-4xl sm:text-5xl">
                     {value.icon}
                   </span>
                 </div>
-                <h3 className="font-headline-md text-xl mb-3 text-on-background dark:text-white">
+                <h3 className="font-headline-md text-lg sm:text-xl mb-2 sm:mb-3 text-on-background dark:text-white">
                   {value.title}
                 </h3>
                 <p className="font-body-md text-sm text-slate-gray dark:text-slate-400">{value.text}</p>

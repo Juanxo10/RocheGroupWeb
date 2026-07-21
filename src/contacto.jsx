@@ -108,7 +108,7 @@ function Contacto() {
                     <div className="font-label-md text-label-md text-slate-gray dark:text-slate-400 uppercase tracking-wide">
                       {item.label}
                     </div>
-                    <div className="font-body-md text-body-md text-deep-indigo dark:text-white font-semibold break-all">
+                    <div className="font-body-md text-sm sm:text-body-md text-deep-indigo dark:text-white font-semibold break-words">
                       {item.value}
                     </div>
                   </div>

@@ -278,13 +278,13 @@ function Inicio() {
               </div>
 
               <div
-                className="hidden lg:flex items-center justify-center reveal active"
+                className="flex items-center justify-center reveal active"
                 style={{ transitionDelay: '150ms' }}
               >
                 <img
                   src={logoletra}
                   alt="RovidionGroup — Desarrollamos tus ideas"
-                  className="w-full max-w-md h-auto transition-all duration-300 dark:brightness-0 dark:invert"
+                  className="w-full max-w-[280px] sm:max-w-sm lg:max-w-md h-auto transition-all duration-300 dark:brightness-0 dark:invert"
                 />
               </div>
             </div>
@@ -295,7 +295,7 @@ function Inicio() {
         <section className="bg-surface-container-low dark:bg-[#0b1020] py-24 md:py-32 transition-colors duration-300">
           <div className="px-6 md:px-margin-desktop max-w-container-max mx-auto">
             <div className="text-center mb-16 md:mb-24 reveal">
-              <h2 className="font-headline-lg text-headline-lg text-deep-indigo dark:text-white mb-4">
+              <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-indigo dark:text-white mb-4">
                 Nuestros últimos trabajos
               </h2>
               <p className="font-body-md text-body-md text-slate-gray dark:text-slate-400 max-w-2xl mx-auto">
