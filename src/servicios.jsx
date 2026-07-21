@@ -51,6 +51,27 @@ const services = [
       'Su tranquilidad es nuestra prioridad. Ofrecemos mantenimiento proactivo, actualizaciones de seguridad y soporte continuo con tiempos de respuesta rápidos para que su negocio nunca se detenga.',
     span: true,
   },
+  {
+    number: '07',
+    icon: 'campaign',
+    title: 'Marketing Digital Integral',
+    description:
+      'Estrategia, redes y pauta trabajando juntas para atraer clientes y hacer crecer su marca en el mundo digital.',
+  },
+  {
+    number: '08',
+    icon: 'forum',
+    title: 'Gestión de Redes Sociales',
+    description:
+      'Community management profesional: contenido, interacción y crecimiento constante de sus redes sociales.',
+  },
+  {
+    number: '09',
+    icon: 'ads_click',
+    title: 'Campañas Meta, Google y TikTok',
+    description:
+      'Pauta digital gestionada de principio a fin para llegar a la audiencia correcta y maximizar el retorno de su inversión.',
+  },
 ]
 
 const checklist = [
@@ -78,7 +99,7 @@ function Servicios() {
   useSeo({
     title: 'Servicios',
     description:
-      'Desarrollo web, apps móviles, software a medida, APIs, diseño UI/UX y soporte continuo. Conoce los servicios digitales de RovidionGroup.',
+      'Desarrollo web, apps móviles, software a medida, APIs, diseño UI/UX, marketing digital y gestión de redes sociales. Conoce los servicios digitales de RovidionGroup.',
   })
 
   useEffect(() => {
