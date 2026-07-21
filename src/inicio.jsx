@@ -278,13 +278,13 @@ function Inicio() {
               </div>
 
               <div
-                className="flex items-center justify-center reveal active"
+                className="order-first lg:order-none flex items-center justify-center reveal active mb-4 lg:mb-0"
                 style={{ transitionDelay: '150ms' }}
               >
                 <img
                   src={logoletra}
                   alt="RovidionGroup — Desarrollamos tus ideas"
-                  className="w-full max-w-[280px] sm:max-w-sm lg:max-w-md h-auto transition-all duration-300 dark:brightness-0 dark:invert"
+                  className="w-full max-w-[220px] sm:max-w-sm lg:max-w-md h-auto transition-all duration-300 dark:brightness-0 dark:invert"
                 />
               </div>
             </div>
