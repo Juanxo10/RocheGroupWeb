@@ -1,10 +1,16 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from './navbar'
 import Footer from './footer'
 import { useSeo } from './useSeo'
 import heroImage from './assets/imagenn.png'
 import logoletra from './assets/logoletra-transparent.png'
+import pepasCoffeeMenu from './assets/pepas-coffee-menu.png'
+import pepasCoffeeAdicionales from './assets/pepas-coffee-adicionales.png'
+import pepasCoffeeHome from './assets/pepas-coffee-home.png'
+import conagroInicio from './assets/conagro-inicio.png'
+import conagroPrevio from './assets/conagro-previo.png'
+import conagroPanel from './assets/conagro-panel.png'
 
 const techStack = [
   {
@@ -33,6 +39,53 @@ const techStack = [
     src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD_vGUYQ7cZGm9N-ytNy48REsaG3g8NgCg4LH0MHyeo7kbwT--cXVRupoUPWeptH--dNtfy8efU0hPNcaY_1ELVRfrrtxgqV6F0U2rX06hVaUeHH2CStf0cW_ubSGfpyJMgRWBIt8wtr47iHC2RaIoveeR7Kgpzy4X4XKRueLaFXCJOY8IY-SZG1AB0pRx-4EKT6K1SLGBK9eEG-SITeL_I-jGO7hdNCVJrtOqIFJoIiVEVElbIUPAUb0ZeN6eLukJHrWgxad5lrEQ',
   },
 ]
+
+// TODO: reemplazar el placeholder de cada tarjeta por images: [...] cuando haya capturas reales de los proyectos.
+const projects = [
+  {
+    title: 'Pepas Coffee — Plataforma de Pedidos',
+    category: 'Desarrollo Web Full-Stack',
+    description:
+      'Sistema de pedidos para un negocio de bowls y brunch: el cliente arma su pedido a la carta, paga en línea con Wompi o contraentrega, y el equipo gestiona todo desde un panel administrativo con estados de pedido, stock y estadísticas en tiempo real.',
+    tags: ['React', 'Node.js', 'PostgreSQL', 'Wompi'],
+    images: [pepasCoffeeMenu, pepasCoffeeAdicionales, pepasCoffeeHome],
+  },
+  {
+    title: 'Conagro — Trazabilidad Agroindustrial',
+    category: 'Software a Medida',
+    description:
+      'Sistema de trazabilidad para el proceso completo del grano: desde la recepción y pesaje hasta la trilla, liquidación y despacho, con roles de usuario, auditoría y generación de certificados de calidad en PDF.',
+    tags: ['React', 'Node.js', 'PostgreSQL', 'JWT'],
+    images: [conagroInicio, conagroPrevio, conagroPanel],
+  },
+]
+
+function ProjectImageCarousel({ images, alt }) {
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    if (images.length < 2) return
+    const interval = setInterval(() => {
+      setIndex((i) => (i + 1) % images.length)
+    }, 3500)
+    return () => clearInterval(interval)
+  }, [images])
+
+  return (
+    <div className="relative w-full h-full">
+      {images.map((src, i) => (
+        <img
+          key={src}
+          src={src}
+          alt={alt}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+            i === index ? 'opacity-100' : 'opacity-0'
+          }`}
+        />
+      ))}
+    </div>
+  )
+}
 
 function Inicio() {
   useSeo({
@@ -191,6 +244,63 @@ function Inicio() {
                 Software de Alto Impacto
               </div>
               <div className="text-[12px] text-slate-gray">Desarrollo ágil &amp; escalable</div>
+            </div>
+          </div>
+        </section>
+
+        {/* Portfolio / Evidence Section */}
+        <section className="bg-surface-container-low py-24 md:py-32">
+          <div className="px-6 md:px-margin-desktop max-w-container-max mx-auto">
+            <div className="text-center mb-16 md:mb-24 reveal">
+              <h2 className="font-headline-lg text-headline-lg text-deep-indigo mb-4">
+                Nuestros últimos trabajos
+              </h2>
+              <p className="font-body-md text-body-md text-slate-gray max-w-2xl mx-auto">
+                Una muestra de los proyectos que hemos desarrollado para nuestros clientes.
+              </p>
+            </div>
+            <div className="flex flex-wrap justify-center gap-gutter">
+              {projects.map((project, i) => (
+                <div
+                  key={project.title}
+                  className="group w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-pure-white rounded-2xl border border-surface-container overflow-hidden hover:shadow-xl transition-all duration-300 reveal"
+                  style={{ transitionDelay: `${(i + 1) * 100}ms` }}
+                >
+                  <div className="aspect-video bg-surface-container flex items-center justify-center overflow-hidden">
+                    {project.images ? (
+                      <ProjectImageCarousel
+                        images={project.images}
+                        alt={`Captura de pantalla del proyecto ${project.title}`}
+                      />
+                    ) : (
+                      <span className="material-symbols-outlined text-5xl text-slate-gray/40">
+                        image
+                      </span>
+                    )}
+                  </div>
+                  <div className="p-6">
+                    <span className="text-primary font-label-md text-label-md uppercase tracking-widest">
+                      {project.category}
+                    </span>
+                    <h3 className="font-headline-md text-xl mt-2 mb-3 text-deep-indigo">
+                      {project.title}
+                    </h3>
+                    <p className="font-body-md text-sm text-slate-gray mb-4">
+                      {project.description}
+                    </p>
+                    <div className="flex gap-2 flex-wrap">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-3 py-1 bg-surface-container-low rounded-full text-[12px] font-semibold text-slate-gray"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
