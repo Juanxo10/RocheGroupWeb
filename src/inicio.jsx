@@ -11,6 +11,8 @@ import pepasCoffeeHome from './assets/pepas-coffee-home.png'
 import conagroInicio from './assets/conagro-inicio.png'
 import conagroPrevio from './assets/conagro-previo.png'
 import conagroPanel from './assets/conagro-panel.png'
+import urbanFadeHero from './assets/urban-fade-hero.png'
+import urbanFadeServicios from './assets/urban-fade-servicios.png'
 
 const techStack = [
   {
@@ -57,6 +59,14 @@ const projects = [
       'Sistema de trazabilidad para el proceso completo del grano: desde la recepción y pesaje hasta la trilla, liquidación y despacho, con roles de usuario, auditoría y generación de certificados de calidad en PDF.',
     tags: ['React', 'Node.js', 'PostgreSQL', 'JWT'],
     images: [conagroInicio, conagroPrevio, conagroPanel],
+  },
+  {
+    title: 'Urban Fade — Reservas para Barbería',
+    category: 'Desarrollo Web Full-Stack',
+    description:
+      'Plataforma de reservas para una barbería: el cliente agenda su cita eligiendo fecha, hora y servicio, con reglas de negocio como anticipación mínima, un cupo activo por día y cierre los domingos, mientras el barbero gestiona su agenda diaria y semanal desde un panel separado por rol.',
+    tags: ['React', 'Node.js', 'PostgreSQL', 'JWT'],
+    images: [urbanFadeHero, urbanFadeServicios],
   },
 ]
 
