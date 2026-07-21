@@ -22,7 +22,7 @@ function Footer() {
             </span>
           </Link>
           <p className="text-on-tertiary-container/80 font-body-md text-body-md mb-8">
-            Líderes en transformación digital y desarrollo de software premium.
+            Expertos en transformación digital y desarrollo de software premium.
           </p>
         </div>
 
