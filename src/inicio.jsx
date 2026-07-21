@@ -113,7 +113,7 @@ function Inicio() {
   useSeo({
     title: 'Inicio',
     description:
-      'RovidionGroup desarrolla páginas web, aplicaciones móviles y software a la medida con tecnología moderna y trato directo con el equipo.',
+      'RovidionGroup desarrolla páginas web, aplicaciones móviles, software a la medida y marketing digital con tecnología moderna y trato directo con el equipo.',
   })
 
   useEffect(() => {
@@ -239,8 +239,8 @@ function Inicio() {
                   Convertimos ideas en soluciones digitales
                 </h1>
                 <p className="font-body-lg text-body-lg text-slate-gray dark:text-slate-400 mb-10 max-w-xl">
-                  Desarrollamos páginas web, aplicaciones móviles y software a la medida para
-                  impulsar tu negocio al siguiente nivel.
+                  Desarrollamos páginas web, aplicaciones móviles, software a la medida y
+                  marketing digital para impulsar tu negocio al siguiente nivel.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Link
