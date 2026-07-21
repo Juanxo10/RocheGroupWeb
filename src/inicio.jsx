@@ -138,6 +138,16 @@ function Inicio() {
         .animate-float {
           animation: float 6s ease-in-out infinite;
         }
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation: marquee 25s linear infinite;
+        }
+        .animate-marquee:hover {
+          animation-play-state: paused;
+        }
         .reveal {
           opacity: 0;
           transform: translateY(30px);
@@ -311,17 +321,19 @@ function Inicio() {
             <p className="text-center font-label-md text-label-md text-slate-gray mb-12 uppercase tracking-widest">
               Tecnologías en las que confiamos
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-              {techStack.map((tech) => (
-                <div className="flex items-center gap-3 group" key={tech.name}>
-                  <div className="w-10 h-10 flex items-center justify-center">
-                    <img className="w-full h-full object-contain" alt={tech.alt} src={tech.src} />
+            <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+              <div className="flex items-center w-max gap-12 md:gap-20 opacity-60 grayscale hover:grayscale-0 transition-all duration-500 animate-marquee">
+                {[...techStack, ...techStack].map((tech, i) => (
+                  <div className="flex items-center gap-3 flex-shrink-0" key={`${tech.name}-${i}`}>
+                    <div className="w-10 h-10 flex items-center justify-center">
+                      <img className="w-full h-full object-contain" alt={tech.alt} src={tech.src} />
+                    </div>
+                    <span className="font-bold text-deep-indigo text-lg hidden sm:block">
+                      {tech.name}
+                    </span>
                   </div>
-                  <span className="font-bold text-deep-indigo text-lg hidden sm:block">
-                    {tech.name}
-                  </span>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>
