@@ -163,7 +163,7 @@ function Inicio() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative isolate pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+        <section className="relative isolate pt-40 pb-20 md:pt-60 md:pb-32 overflow-hidden">
           <img
             src={heroImage}
             alt=""
