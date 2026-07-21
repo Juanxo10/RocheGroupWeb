@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import Navbar from './navbar'
 import Footer from './footer'
 import { useSeo } from './useSeo'
-import heroImage from './assets/imagenn.png'
 import logoletra from './assets/logoletra-transparent.png'
 import pepasCoffeeMenu from './assets/pepas-coffee-menu.png'
 import pepasCoffeeAdicionales from './assets/pepas-coffee-adicionales.png'
@@ -13,6 +12,19 @@ import conagroPrevio from './assets/conagro-previo.png'
 import conagroPanel from './assets/conagro-panel.png'
 import urbanFadeHero from './assets/urban-fade-hero.png'
 import urbanFadeServicios from './assets/urban-fade-servicios.png'
+
+const heroLights = [
+  { top: '15%', left: '10%', size: 'w-2.5 h-2.5', color: 'bg-primary/60', glow: 'shadow-[0_0_24px_8px_rgba(0,74,198,0.5)]', anim: 'animate-particle-a', delay: '0s' },
+  { top: '68%', left: '18%', size: 'w-2 h-2', color: 'bg-secondary-container/80', glow: 'shadow-[0_0_20px_7px_rgba(63,225,253,0.55)]', anim: 'animate-particle-b', delay: '-1.5s' },
+  { top: '35%', left: '32%', size: 'w-1.5 h-1.5', color: 'bg-tertiary/70', glow: 'shadow-[0_0_16px_6px_rgba(70,60,205,0.5)]', anim: 'animate-particle-c', delay: '-3s' },
+  { top: '78%', left: '42%', size: 'w-2.5 h-2.5', color: 'bg-primary/50', glow: 'shadow-[0_0_24px_8px_rgba(0,74,198,0.5)]', anim: 'animate-particle-a', delay: '-2s' },
+  { top: '20%', left: '55%', size: 'w-2 h-2', color: 'bg-secondary-container/70', glow: 'shadow-[0_0_20px_7px_rgba(63,225,253,0.5)]', anim: 'animate-particle-b', delay: '-4s' },
+  { top: '52%', left: '68%', size: 'w-3 h-3', color: 'bg-tertiary/60', glow: 'shadow-[0_0_28px_9px_rgba(70,60,205,0.45)]', anim: 'animate-particle-c', delay: '-1s' },
+  { top: '12%', left: '78%', size: 'w-2 h-2', color: 'bg-primary/55', glow: 'shadow-[0_0_20px_7px_rgba(0,74,198,0.5)]', anim: 'animate-particle-a', delay: '-5s' },
+  { top: '82%', left: '85%', size: 'w-2.5 h-2.5', color: 'bg-secondary-container/75', glow: 'shadow-[0_0_24px_8px_rgba(63,225,253,0.5)]', anim: 'animate-particle-b', delay: '-3.5s' },
+  { top: '45%', left: '90%', size: 'w-1.5 h-1.5', color: 'bg-tertiary/65', glow: 'shadow-[0_0_16px_6px_rgba(70,60,205,0.5)]', anim: 'animate-particle-c', delay: '-2.5s' },
+  { top: '5%', left: '40%', size: 'w-1.5 h-1.5', color: 'bg-primary/50', glow: 'shadow-[0_0_16px_6px_rgba(0,74,198,0.45)]', anim: 'animate-particle-a', delay: '-4.5s' },
+]
 
 const techStack = [
   {
@@ -130,23 +142,10 @@ function Inicio() {
   }, [])
 
   return (
-    <div className="bg-background text-on-background font-body-md overflow-x-hidden">
+    <div className="bg-background dark:bg-[#0b1020] text-on-background dark:text-slate-100 font-body-md overflow-x-hidden transition-colors duration-300">
       <style>{`
         .material-symbols-outlined {
           font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-card {
-          background: rgba(255, 255, 255, 0.7);
-          backdrop-filter: blur(12px);
-          border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        @keyframes float {
-          0% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-          100% { transform: translateY(0px); }
-        }
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
         }
         @keyframes marquee {
           0% { transform: translateX(0); }
@@ -157,6 +156,47 @@ function Inicio() {
         }
         .animate-marquee:hover {
           animation-play-state: paused;
+        }
+        @keyframes blob {
+          0%, 100% {
+            border-radius: 42% 58% 65% 35% / 45% 45% 55% 55%;
+            transform: rotate(0deg) scale(1);
+          }
+          33% {
+            border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
+            transform: rotate(8deg) scale(1.08);
+          }
+          66% {
+            border-radius: 35% 65% 55% 45% / 60% 35% 65% 40%;
+            transform: rotate(-6deg) scale(0.95);
+          }
+        }
+        .animate-blob {
+          animation: blob 12s ease-in-out infinite;
+        }
+        @keyframes particle-a {
+          0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+          50% { transform: translate(18px, -26px) scale(1.6); opacity: 0.9; }
+        }
+        @keyframes particle-b {
+          0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+          50% { transform: translate(-22px, -16px) scale(1.4); opacity: 0.85; }
+        }
+        @keyframes particle-c {
+          0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.25; }
+          50% { transform: translate(14px, 24px) scale(1.5); opacity: 0.9; }
+        }
+        .animate-particle-a {
+          animation: particle-a 7s ease-in-out infinite;
+          filter: blur(1.5px);
+        }
+        .animate-particle-b {
+          animation: particle-b 8.5s ease-in-out infinite;
+          filter: blur(1.5px);
+        }
+        .animate-particle-c {
+          animation: particle-c 6.5s ease-in-out infinite;
+          filter: blur(1.5px);
         }
         .reveal {
           opacity: 0;
@@ -174,108 +214,91 @@ function Inicio() {
       <main>
         {/* Hero Section */}
         <section className="relative isolate pt-40 pb-20 md:pt-60 md:pb-32 overflow-hidden">
-          <img
-            src={heroImage}
-            alt=""
-            aria-hidden="true"
-            className="hidden md:block absolute inset-0 -z-10 w-full h-full object-cover object-right"
-          />
+          <div className="absolute -top-32 -left-32 w-[46rem] h-[42rem] -z-10 bg-gradient-to-br from-primary/25 via-tertiary/20 to-transparent blur-3xl animate-blob" />
           <div
-            aria-hidden="true"
-            className="hidden md:block absolute inset-0 -z-10 bg-white/25"
+            className="absolute -bottom-32 -right-32 w-[46rem] h-[42rem] -z-10 bg-gradient-to-tr from-secondary-container/25 via-primary/15 to-transparent blur-3xl animate-blob"
+            style={{ animationDelay: '-6s' }}
           />
-
-          <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-            {/* Hero Content */}
-            <div className="lg:max-w-2xl reveal" id="hero-text">
-              <img
-                src={logoletra}
-                alt="RovidionGroup — Desarrollamos tus ideas"
-                className="h-56 md:h-72 w-auto mb-8 -ml-2"
+          <div className="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+            {heroLights.map((light, i) => (
+              <span
+                key={i}
+                className={`absolute rounded-full ${light.size} ${light.color} ${light.glow} ${light.anim}`}
+                style={{ top: light.top, left: light.left, animationDelay: light.delay }}
               />
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full mb-8">
-                <span className="material-symbols-outlined text-[18px]">auto_awesome</span>
-                <span className="font-label-md text-label-md">Innovación Digital de Elite</span>
-              </div>
-              <h1 className="font-display-lg font-extrabold text-[38px] md:text-[56px] text-deep-indigo mb-6 tracking-tight leading-[1.1] break-words">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-tertiary">
-                  Convertimos ideas
-                </span>{' '}
-                en soluciones digitales
-              </h1>
-              <p className="font-body-lg text-body-lg text-deep-indigo/80 font-medium mb-10 max-w-xl">
-                Desarrollamos páginas web, aplicaciones móviles y software a la medida para
-                impulsar tu negocio al siguiente nivel con tecnología de vanguardia.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  to="/contacto"
-                  className="bg-gradient-to-r from-primary to-tertiary text-pure-white px-10 py-4 rounded-full font-label-md text-label-md shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-3"
-                >
-                  Solicita tu cotización gratis
-                  <span className="material-symbols-outlined">arrow_forward</span>
-                </Link>
-                <Link
-                  to="/servicios"
-                  className="bg-pure-white border border-slate-gray/20 text-deep-indigo px-10 py-4 rounded-full font-label-md text-label-md hover:bg-surface-container-low transition-all duration-300"
-                >
-                  Ver servicios
-                </Link>
-              </div>
-
-              {/* Mobile Visual Asset */}
-              <div className="md:hidden mt-10 rounded-[28px] overflow-hidden shadow-xl relative">
-                <img
-                  src={heroImage}
-                  alt="Ilustración de desarrollo de software: sitios web, aplicaciones móviles y servicios en la nube."
-                  className="w-full h-64 object-cover object-right"
-                />
-                <div aria-hidden="true" className="absolute inset-0 bg-white/25" />
-              </div>
-
-              {/* Differentiators */}
-              <div className="mt-16 grid grid-cols-3 gap-6 border-t border-surface-container-high pt-8">
-                <div>
-                  <div className="font-headline-md text-headline-md text-deep-indigo">100%</div>
-                  <div className="text-slate-gray font-label-md text-label-md">Dedicación</div>
-                </div>
-                <div>
-                  <div className="font-headline-md text-headline-md text-deep-indigo">24h</div>
-                  <div className="text-slate-gray font-label-md text-label-md">Tiempo de respuesta</div>
-                </div>
-                <div>
-                  <div className="font-headline-md text-headline-md text-deep-indigo">1:1</div>
-                  <div className="text-slate-gray font-label-md text-label-md">Trato directo</div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
+          <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              {/* Hero Content */}
+              <div className="reveal" id="hero-text">
+                <span className="text-primary dark:text-secondary-container font-label-md text-label-md uppercase tracking-widest mb-4 block">
+                  Innovación Digital
+                </span>
+                <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-deep-indigo dark:text-white mb-6 leading-tight">
+                  Convertimos ideas en soluciones digitales
+                </h1>
+                <p className="font-body-lg text-body-lg text-slate-gray dark:text-slate-400 mb-10 max-w-xl">
+                  Desarrollamos páginas web, aplicaciones móviles y software a la medida para
+                  impulsar tu negocio al siguiente nivel.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    to="/contacto"
+                    className="bg-primary text-pure-white px-8 py-4 rounded-full font-label-md text-label-md hover:bg-primary/90 transition-colors duration-300 flex items-center gap-3"
+                  >
+                    Solicita tu cotización gratis
+                    <span className="material-symbols-outlined">arrow_forward</span>
+                  </Link>
+                  <Link
+                    to="/servicios"
+                    className="border border-slate-gray/20 dark:border-white/15 text-deep-indigo dark:text-white px-8 py-4 rounded-full font-label-md text-label-md hover:bg-surface-container-low dark:hover:bg-white/5 transition-colors duration-300"
+                  >
+                    Ver servicios
+                  </Link>
+                </div>
 
-          {/* Floating Glass Card */}
-          <div
-            className="hidden lg:flex absolute bottom-16 right-[8%] xl:right-[12%] w-72 glass-card p-6 rounded-2xl items-center gap-4 reveal animate-float"
-            style={{ transitionDelay: '200ms' }}
-          >
-            <div className="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center">
-              <span className="material-symbols-outlined text-on-secondary-container">bolt</span>
-            </div>
-            <div>
-              <div className="font-label-md text-label-md text-deep-indigo">
-                Software de Alto Impacto
+                {/* Differentiators */}
+                <div className="mt-16 grid grid-cols-3 gap-6 border-t border-surface-container-high dark:border-white/10 pt-8 max-w-md">
+                  <div>
+                    <div className="font-headline-md text-headline-md text-deep-indigo dark:text-white">100%</div>
+                    <div className="text-slate-gray dark:text-slate-400 font-label-md text-label-md">Dedicación</div>
+                  </div>
+                  <div>
+                    <div className="font-headline-md text-headline-md text-deep-indigo dark:text-white">24h</div>
+                    <div className="text-slate-gray dark:text-slate-400 font-label-md text-label-md">
+                      Tiempo de respuesta
+                    </div>
+                  </div>
+                  <div>
+                    <div className="font-headline-md text-headline-md text-deep-indigo dark:text-white">1:1</div>
+                    <div className="text-slate-gray dark:text-slate-400 font-label-md text-label-md">Trato directo</div>
+                  </div>
+                </div>
               </div>
-              <div className="text-[12px] text-slate-gray">Desarrollo ágil &amp; escalable</div>
+
+              <div
+                className="hidden lg:flex items-center justify-center reveal active"
+                style={{ transitionDelay: '150ms' }}
+              >
+                <img
+                  src={logoletra}
+                  alt="RovidionGroup — Desarrollamos tus ideas"
+                  className="w-full max-w-md h-auto transition-all duration-300 dark:brightness-0 dark:invert"
+                />
+              </div>
             </div>
           </div>
         </section>
 
         {/* Portfolio / Evidence Section */}
-        <section className="bg-surface-container-low py-24 md:py-32">
+        <section className="bg-surface-container-low dark:bg-[#0b1020] py-24 md:py-32 transition-colors duration-300">
           <div className="px-6 md:px-margin-desktop max-w-container-max mx-auto">
             <div className="text-center mb-16 md:mb-24 reveal">
-              <h2 className="font-headline-lg text-headline-lg text-deep-indigo mb-4">
+              <h2 className="font-headline-lg text-headline-lg text-deep-indigo dark:text-white mb-4">
                 Nuestros últimos trabajos
               </h2>
-              <p className="font-body-md text-body-md text-slate-gray max-w-2xl mx-auto">
+              <p className="font-body-md text-body-md text-slate-gray dark:text-slate-400 max-w-2xl mx-auto">
                 Una muestra de los proyectos que hemos desarrollado para nuestros clientes.
               </p>
             </div>
@@ -283,10 +306,10 @@ function Inicio() {
               {projects.map((project, i) => (
                 <div
                   key={project.title}
-                  className="group w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-pure-white rounded-2xl border border-surface-container overflow-hidden hover:shadow-xl transition-all duration-300 reveal"
+                  className="group w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-pure-white dark:bg-[#0b1020] rounded-2xl border border-surface-container dark:border-white/10 overflow-hidden hover:shadow-xl transition-all duration-300 reveal"
                   style={{ transitionDelay: `${(i + 1) * 100}ms` }}
                 >
-                  <div className="aspect-video bg-surface-container flex items-center justify-center overflow-hidden">
+                  <div className="aspect-video bg-surface-container dark:bg-white/5 flex items-center justify-center overflow-hidden">
                     {project.images ? (
                       <ProjectImageCarousel
                         images={project.images}
@@ -299,20 +322,20 @@ function Inicio() {
                     )}
                   </div>
                   <div className="p-6">
-                    <span className="text-primary font-label-md text-label-md uppercase tracking-widest">
+                    <span className="text-primary dark:text-secondary-container font-label-md text-label-md uppercase tracking-widest">
                       {project.category}
                     </span>
-                    <h3 className="font-headline-md text-xl mt-2 mb-3 text-deep-indigo">
+                    <h3 className="font-headline-md text-xl mt-2 mb-3 text-deep-indigo dark:text-white">
                       {project.title}
                     </h3>
-                    <p className="font-body-md text-sm text-slate-gray mb-4">
+                    <p className="font-body-md text-sm text-slate-gray dark:text-slate-400 mb-4">
                       {project.description}
                     </p>
                     <div className="flex gap-2 flex-wrap">
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-3 py-1 bg-surface-container-low rounded-full text-[12px] font-semibold text-slate-gray"
+                          className="px-3 py-1 bg-surface-container-low dark:bg-white/5 rounded-full text-[12px] font-semibold text-slate-gray dark:text-slate-400"
                         >
                           {tag}
                         </span>
@@ -326,9 +349,9 @@ function Inicio() {
         </section>
 
         {/* Trust Bar Section */}
-        <section className="py-16 bg-white overflow-hidden">
+        <section className="py-16 bg-white dark:bg-[#0b1020] overflow-hidden transition-colors duration-300">
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-            <p className="text-center font-label-md text-label-md text-slate-gray mb-12 uppercase tracking-widest">
+            <p className="text-center font-label-md text-label-md text-slate-gray dark:text-slate-400 mb-12 uppercase tracking-widest">
               Tecnologías en las que confiamos
             </p>
             <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
@@ -338,7 +361,7 @@ function Inicio() {
                     <div className="w-10 h-10 flex items-center justify-center">
                       <img className="w-full h-full object-contain" alt={tech.alt} src={tech.src} />
                     </div>
-                    <span className="font-bold text-deep-indigo text-lg hidden sm:block">
+                    <span className="font-bold text-deep-indigo dark:text-white text-lg hidden sm:block">
                       {tech.name}
                     </span>
                   </div>

@@ -57,7 +57,7 @@ function Nosotros() {
   }, [])
 
   return (
-    <div className="bg-background text-on-surface font-body-md overflow-x-hidden">
+    <div className="bg-background dark:bg-[#0b1020] text-on-surface dark:text-slate-100 font-body-md overflow-x-hidden transition-colors duration-300">
       <style>{`
         .material-symbols-outlined {
           font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -67,6 +67,10 @@ function Nosotros() {
           backdrop-filter: blur(12px);
           border: 1px solid rgba(255, 255, 255, 0.3);
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+        .dark .glass-card {
+          background: rgba(18, 22, 43, 0.6);
+          border: 1px solid rgba(255, 255, 255, 0.08);
         }
         .text-gradient {
           background: linear-gradient(135deg, #004ac6 0%, #463ccd 100%);
@@ -93,29 +97,29 @@ function Nosotros() {
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary-fixed/20 rounded-full blur-3xl" />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="reveal active">
-              <span className="text-primary font-label-md text-label-md uppercase tracking-widest mb-4 block">
+              <span className="text-primary dark:text-secondary-container font-label-md text-label-md uppercase tracking-widest mb-4 block">
                 Sobre Nosotros
               </span>
-              <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-8 leading-tight">
+              <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-background dark:text-white mb-8 leading-tight">
                 Transformamos la pasión en <span className="text-gradient">innovación</span>{' '}
                 digital.
               </h1>
-              <p className="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl">
+              <p className="font-body-lg text-body-lg text-on-surface-variant dark:text-slate-400 mb-8 max-w-xl">
                 En RovidionGroup, nuestro equipo vive y respira tecnología. No solo desarrollamos
                 software; creamos experiencias digitales que impulsan el crecimiento. Nos apasiona
                 enfrentar desafíos complejos con soluciones elegantes, fusionando precisión
                 técnica con una visión creativa sin límites.
               </p>
               <div className="flex flex-wrap gap-4">
-                <div className="flex items-center gap-2 bg-surface-container px-4 py-2 rounded-lg">
-                  <span className="material-symbols-outlined text-primary">diversity_3</span>
-                  <span className="font-label-md text-label-md text-on-surface">
+                <div className="flex items-center gap-2 bg-surface-container dark:bg-white/10 px-4 py-2 rounded-lg">
+                  <span className="material-symbols-outlined text-primary dark:text-secondary-container">diversity_3</span>
+                  <span className="font-label-md text-label-md text-on-surface dark:text-slate-200">
                     Equipo Comprometido
                   </span>
                 </div>
-                <div className="flex items-center gap-2 bg-surface-container px-4 py-2 rounded-lg">
-                  <span className="material-symbols-outlined text-primary">auto_awesome</span>
-                  <span className="font-label-md text-label-md text-on-surface">
+                <div className="flex items-center gap-2 bg-surface-container dark:bg-white/10 px-4 py-2 rounded-lg">
+                  <span className="material-symbols-outlined text-primary dark:text-secondary-container">auto_awesome</span>
+                  <span className="font-label-md text-label-md text-on-surface dark:text-slate-200">
                     Tecnología de Vanguardia
                   </span>
                 </div>
@@ -134,7 +138,7 @@ function Nosotros() {
         </section>
 
         {/* Mission & Vision: Glassmorphism Bento Grid */}
-        <section className="bg-surface-container-low py-24 md:py-32">
+        <section className="bg-surface-container-low dark:bg-[#0b1020] py-24 md:py-32 transition-colors duration-300">
           <div className="px-6 md:px-margin-desktop max-w-container-max mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
               {/* Mission */}
@@ -142,15 +146,15 @@ function Nosotros() {
                 className="glass-card p-8 md:p-12 rounded-[2rem] reveal"
                 style={{ transitionDelay: '100ms' }}
               >
-                <div className="w-16 h-16 bg-primary-container/10 rounded-2xl flex items-center justify-center mb-8">
-                  <span className="material-symbols-outlined text-primary text-4xl">
+                <div className="w-16 h-16 bg-primary-container/10 dark:bg-white/10 rounded-2xl flex items-center justify-center mb-8">
+                  <span className="material-symbols-outlined text-primary dark:text-secondary-container text-4xl">
                     rocket_launch
                   </span>
                 </div>
-                <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-6">
+                <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background dark:text-white mb-6">
                   Misión
                 </h2>
-                <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed italic">
+                <p className="font-body-lg text-body-lg text-on-surface-variant dark:text-slate-400 leading-relaxed italic">
                   "Brindar soluciones tecnológicas innovadoras que potencien el éxito de nuestros
                   clientes, garantizando excelencia técnica y un compromiso inquebrantable con la
                   calidad."
@@ -182,10 +186,10 @@ function Nosotros() {
         {/* Values Section: Modern Grid */}
         <section className="px-6 md:px-margin-desktop py-24 md:py-32 max-w-container-max mx-auto">
           <div className="text-center mb-16 md:mb-24 reveal">
-            <h2 className="font-headline-lg text-headline-lg text-on-background mb-4">
+            <h2 className="font-headline-lg text-headline-lg text-on-background dark:text-white mb-4">
               Nuestros Valores
             </h2>
-            <p className="font-body-md text-body-md text-slate-gray max-w-2xl mx-auto">
+            <p className="font-body-md text-body-md text-slate-gray dark:text-slate-400 max-w-2xl mx-auto">
               Los pilares que sostienen cada línea de código y cada relación comercial que
               construimos.
             </p>
@@ -194,18 +198,18 @@ function Nosotros() {
             {values.map((value, i) => (
               <div
                 key={value.title}
-                className="group p-8 bg-pure-white rounded-2xl border border-surface-container hover:shadow-xl transition-all duration-300 reveal"
+                className="group p-8 bg-pure-white dark:bg-[#0b1020] rounded-2xl border border-surface-container dark:border-white/10 hover:shadow-xl transition-all duration-300 reveal"
                 style={{ transitionDelay: `${(i + 1) * 100}ms` }}
               >
                 <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <span className="material-symbols-outlined text-primary text-5xl">
+                  <span className="material-symbols-outlined text-primary dark:text-secondary-container text-5xl">
                     {value.icon}
                   </span>
                 </div>
-                <h3 className="font-headline-md text-xl mb-3 text-on-background">
+                <h3 className="font-headline-md text-xl mb-3 text-on-background dark:text-white">
                   {value.title}
                 </h3>
-                <p className="font-body-md text-sm text-slate-gray">{value.text}</p>
+                <p className="font-body-md text-sm text-slate-gray dark:text-slate-400">{value.text}</p>
               </div>
             ))}
           </div>

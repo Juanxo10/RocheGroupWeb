@@ -59,7 +59,7 @@ function Contacto() {
   }
 
   return (
-    <div className="bg-background text-on-background font-body-md overflow-x-hidden">
+    <div className="bg-background dark:bg-[#0b1020] text-on-background dark:text-slate-100 font-body-md overflow-x-hidden transition-colors duration-300">
       <style>{`
         .material-symbols-outlined {
           font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -70,6 +70,10 @@ function Contacto() {
           border: 1px solid rgba(255, 255, 255, 0.3);
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
         }
+        .dark .glass-card {
+          background: rgba(18, 22, 43, 0.7);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+        }
       `}</style>
 
       <Navbar />
@@ -77,13 +81,13 @@ function Contacto() {
       <main className="pt-32 pb-24">
         <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="text-center mb-16">
-            <span className="text-primary font-label-md text-label-md uppercase tracking-widest mb-4 block">
+            <span className="text-primary dark:text-secondary-container font-label-md text-label-md uppercase tracking-widest mb-4 block">
               Hablemos
             </span>
-            <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-deep-indigo mb-6">
+            <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-deep-indigo dark:text-white mb-6">
               Cuéntanos tu idea
             </h1>
-            <p className="font-body-lg text-body-lg text-slate-gray max-w-2xl mx-auto">
+            <p className="font-body-lg text-body-lg text-slate-gray dark:text-slate-400 max-w-2xl mx-auto">
               Escríbenos y te respondemos en menos de 24 horas. Sin formularios eternos, sin
               vueltas: directo con el equipo que va a construir tu proyecto.
             </p>
@@ -97,14 +101,14 @@ function Contacto() {
                   key={item.label}
                   className="glass-card rounded-2xl p-6 flex items-center gap-4"
                 >
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary flex-shrink-0">
+                  <div className="w-12 h-12 bg-primary/10 dark:bg-white/10 rounded-xl flex items-center justify-center text-primary dark:text-secondary-container flex-shrink-0">
                     <span className="material-symbols-outlined">{item.icon}</span>
                   </div>
                   <div>
-                    <div className="font-label-md text-label-md text-slate-gray uppercase tracking-wide">
+                    <div className="font-label-md text-label-md text-slate-gray dark:text-slate-400 uppercase tracking-wide">
                       {item.label}
                     </div>
-                    <div className="font-body-md text-body-md text-deep-indigo font-semibold break-all">
+                    <div className="font-body-md text-body-md text-deep-indigo dark:text-white font-semibold break-all">
                       {item.value}
                     </div>
                   </div>
@@ -121,15 +125,15 @@ function Contacto() {
                       check
                     </span>
                   </div>
-                  <h2 className="font-headline-md text-headline-md text-deep-indigo mb-3">
+                  <h2 className="font-headline-md text-headline-md text-deep-indigo dark:text-white mb-3">
                     ¡Mensaje enviado!
                   </h2>
-                  <p className="font-body-md text-body-md text-slate-gray">
+                  <p className="font-body-md text-body-md text-slate-gray dark:text-slate-400">
                     Gracias por escribirnos. Te responderemos muy pronto.
                   </p>
                   <button
                     onClick={() => setStatus('idle')}
-                    className="mt-8 text-primary font-label-md text-label-md hover:underline"
+                    className="mt-8 text-primary dark:text-secondary-container font-label-md text-label-md hover:underline"
                   >
                     Enviar otro mensaje
                   </button>
@@ -144,7 +148,7 @@ function Contacto() {
                     <div>
                       <label
                         htmlFor="nombre"
-                        className="block font-label-md text-label-md text-deep-indigo mb-2"
+                        className="block font-label-md text-label-md text-deep-indigo dark:text-white mb-2"
                       >
                         Nombre
                       </label>
@@ -154,13 +158,13 @@ function Contacto() {
                         type="text"
                         required
                         placeholder="Tu nombre"
-                        className="w-full rounded-xl border border-slate-gray/20 px-4 py-3 text-on-background focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all"
+                        className="w-full rounded-xl border border-slate-gray/20 dark:border-white/15 px-4 py-3 text-on-background dark:text-white dark:bg-white/5 focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all"
                       />
                     </div>
                     <div>
                       <label
                         htmlFor="email"
-                        className="block font-label-md text-label-md text-deep-indigo mb-2"
+                        className="block font-label-md text-label-md text-deep-indigo dark:text-white mb-2"
                       >
                         Correo
                       </label>
@@ -170,7 +174,7 @@ function Contacto() {
                         type="email"
                         required
                         placeholder="tu@correo.com"
-                        className="w-full rounded-xl border border-slate-gray/20 px-4 py-3 text-on-background focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all"
+                        className="w-full rounded-xl border border-slate-gray/20 dark:border-white/15 px-4 py-3 text-on-background dark:text-white dark:bg-white/5 focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all"
                       />
                     </div>
                   </div>
@@ -178,7 +182,7 @@ function Contacto() {
                   <div>
                     <label
                       htmlFor="asunto"
-                      className="block font-label-md text-label-md text-deep-indigo mb-2"
+                      className="block font-label-md text-label-md text-deep-indigo dark:text-white mb-2"
                     >
                       Asunto
                     </label>
@@ -188,14 +192,14 @@ function Contacto() {
                       type="text"
                       required
                       placeholder="¿En qué podemos ayudarte?"
-                      className="w-full rounded-xl border border-slate-gray/20 px-4 py-3 text-on-background focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all"
+                      className="w-full rounded-xl border border-slate-gray/20 dark:border-white/15 px-4 py-3 text-on-background dark:text-white dark:bg-white/5 focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all"
                     />
                   </div>
 
                   <div>
                     <label
                       htmlFor="mensaje"
-                      className="block font-label-md text-label-md text-deep-indigo mb-2"
+                      className="block font-label-md text-label-md text-deep-indigo dark:text-white mb-2"
                     >
                       Mensaje
                     </label>
@@ -205,7 +209,7 @@ function Contacto() {
                       rows={5}
                       required
                       placeholder="Cuéntanos sobre tu proyecto..."
-                      className="w-full rounded-xl border border-slate-gray/20 px-4 py-3 text-on-background focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all resize-none"
+                      className="w-full rounded-xl border border-slate-gray/20 dark:border-white/15 px-4 py-3 text-on-background dark:text-white dark:bg-white/5 focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all resize-none"
                     />
                   </div>
 

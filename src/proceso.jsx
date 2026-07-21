@@ -86,7 +86,7 @@ function Proceso() {
   }, [])
 
   return (
-    <div className="bg-background text-on-background font-body-md text-body-md overflow-x-hidden">
+    <div className="bg-background dark:bg-[#0b1020] text-on-background dark:text-slate-100 font-body-md text-body-md overflow-x-hidden transition-colors duration-300">
       <style>{`
         .material-symbols-outlined {
           font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -96,6 +96,10 @@ function Proceso() {
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
           border: 1px solid rgba(241, 245, 249, 1);
+        }
+        .dark .glass-card {
+          background: rgba(18, 22, 43, 0.6);
+          border: 1px solid rgba(255, 255, 255, 0.08);
         }
         .reveal {
           opacity: 0;
@@ -128,10 +132,10 @@ function Proceso() {
         {/* Hero Section for Process */}
         <section className="relative py-24 px-5 md:px-margin-desktop max-w-container-max mx-auto text-center overflow-hidden">
           <div className="reveal">
-            <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-deep-indigo mb-6">
-              Nuestro <span className="text-primary">Proceso</span> de Trabajo
+            <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-deep-indigo dark:text-white mb-6">
+              Nuestro <span className="text-primary dark:text-secondary-container">Proceso</span> de Trabajo
             </h1>
-            <p className="font-body-lg text-body-lg text-slate-gray max-w-2xl mx-auto mb-12">
+            <p className="font-body-lg text-body-lg text-slate-gray dark:text-slate-400 max-w-2xl mx-auto mb-12">
               Transformamos ideas complejas en realidades digitales escalables mediante una
               metodología probada y transparente.
             </p>
@@ -140,7 +144,7 @@ function Proceso() {
           {/* Visual Horizontal Timeline (Desktop) / Vertical (Mobile) */}
           <div className="mt-20 relative px-4">
             {/* Timeline Desktop Connector */}
-            <div className="hidden lg:block absolute top-10 left-0 w-full h-0.5 bg-surface-variant z-0">
+            <div className="hidden lg:block absolute top-10 left-0 w-full h-0.5 bg-surface-variant dark:bg-white/10 z-0">
               <div className="h-full bg-primary w-0" ref={progressRef} />
             </div>
 
@@ -151,16 +155,16 @@ function Proceso() {
                   className="flex flex-col items-center flex-1 reveal"
                   style={{ transitionDelay: `${(i + 1) * 100}ms` }}
                 >
-                  <div className="w-20 h-20 rounded-full bg-white shadow-xl flex items-center justify-center mb-6 border border-surface-variant relative overflow-hidden group">
+                  <div className="w-20 h-20 rounded-full bg-white dark:bg-[#0b1020] shadow-xl flex items-center justify-center mb-6 border border-surface-variant dark:border-white/10 relative overflow-hidden group">
                     <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-opacity" />
-                    <span className="material-symbols-outlined text-primary text-3xl">
+                    <span className="material-symbols-outlined text-primary dark:text-secondary-container text-3xl">
                       {step.icon}
                     </span>
                   </div>
-                  <h3 className="font-headline-md text-[20px] text-deep-indigo mb-2">
+                  <h3 className="font-headline-md text-[20px] text-deep-indigo dark:text-white mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-slate-gray text-center text-sm px-4">{step.text}</p>
+                  <p className="text-slate-gray dark:text-slate-400 text-center text-sm px-4">{step.text}</p>
                 </div>
               ))}
             </div>

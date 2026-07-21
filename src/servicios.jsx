@@ -125,7 +125,7 @@ function Servicios() {
   }, [])
 
   return (
-    <div className="bg-background text-on-surface font-body-md overflow-x-hidden">
+    <div className="bg-background dark:bg-[#0b1020] text-on-surface dark:text-slate-100 font-body-md overflow-x-hidden transition-colors duration-300">
       <style>{`
         .glass-card {
           background: rgba(255, 255, 255, 0.8);
@@ -137,6 +137,13 @@ function Servicios() {
           transform: translateY(-8px);
           box-shadow: 0px 20px 40px rgba(37, 99, 235, 0.08);
           border-color: #3fe1fd;
+        }
+        .dark .glass-card {
+          background: rgba(18, 22, 43, 0.7);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .dark .glass-card:hover {
+          box-shadow: 0px 20px 40px rgba(63, 225, 253, 0.1);
         }
         .gradient-text {
           background: linear-gradient(135deg, #004ac6 0%, #463ccd 100%);
@@ -153,14 +160,14 @@ function Servicios() {
       <main className="pt-32">
         {/* Hero Section for Services */}
         <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 text-center">
-          <span className="inline-block bg-primary/10 text-primary font-label-md text-label-md px-4 py-1.5 rounded-full mb-6">
+          <span className="inline-block bg-primary/10 dark:bg-white/10 text-primary dark:text-secondary-container font-label-md text-label-md px-4 py-1.5 rounded-full mb-6">
             Expertise Tecnológica
           </span>
-          <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-deep-indigo mb-6">
+          <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-deep-indigo dark:text-white mb-6">
             Nuestras Soluciones <br />
             <span className="gradient-text">Digitales de Élite</span>
           </h1>
-          <p className="max-w-2xl mx-auto font-body-lg text-body-lg text-slate-gray">
+          <p className="max-w-2xl mx-auto font-body-lg text-body-lg text-slate-gray dark:text-slate-400">
             Transformamos ideas complejas en infraestructuras digitales escalables, seguras y
             centradas en el usuario.
           </p>
@@ -177,16 +184,16 @@ function Servicios() {
                 }`}
               >
                 <div className="flex justify-between items-start">
-                  <div className="w-14 h-14 bg-primary/5 rounded-lg flex items-center justify-center text-primary">
+                  <div className="w-14 h-14 bg-primary/5 dark:bg-white/10 rounded-lg flex items-center justify-center text-primary dark:text-secondary-container">
                     <span className="material-symbols-outlined text-4xl">{service.icon}</span>
                   </div>
-                  <span className="text-slate-gray/30 font-bold text-4xl">{service.number}</span>
+                  <span className="text-slate-gray/30 dark:text-slate-500/50 font-bold text-4xl">{service.number}</span>
                 </div>
                 <div>
-                  <h3 className="font-headline-md text-headline-md text-deep-indigo mb-4">
+                  <h3 className="font-headline-md text-headline-md text-deep-indigo dark:text-white mb-4">
                     {service.title}
                   </h3>
-                  <p className="font-body-md text-body-md text-slate-gray leading-relaxed">
+                  <p className="font-body-md text-body-md text-slate-gray dark:text-slate-400 leading-relaxed">
                     {service.description}
                   </p>
                 </div>
@@ -195,7 +202,7 @@ function Servicios() {
                     {service.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 bg-surface-container rounded-full text-[12px] font-semibold text-slate-gray"
+                        className="px-3 py-1 bg-surface-container dark:bg-white/10 rounded-full text-[12px] font-semibold text-slate-gray dark:text-slate-400"
                       >
                         {tag}
                       </span>
@@ -208,7 +215,7 @@ function Servicios() {
         </section>
 
         {/* Why Choose Us (Asymmetric Layout) */}
-        <section className="bg-surface-container-low py-32">
+        <section className="bg-surface-container-low dark:bg-[#0b1020] py-32 transition-colors duration-300">
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="relative">
               <div className="absolute -top-10 -left-10 w-40 h-40 bg-secondary-container/20 blur-3xl rounded-full" />
@@ -222,7 +229,7 @@ function Servicios() {
               </div>
             </div>
             <div>
-              <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-indigo mb-8">
+              <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-indigo dark:text-white mb-8">
                 ¿Por qué elegir <br />
                 RovidionGroup?
               </h2>
@@ -233,10 +240,10 @@ function Servicios() {
                       <span className="material-symbols-outlined text-xl">check</span>
                     </div>
                     <div>
-                      <h4 className="font-label-md text-label-md text-deep-indigo">
+                      <h4 className="font-label-md text-label-md text-deep-indigo dark:text-white">
                         {item.title}
                       </h4>
-                      <p className="font-body-md text-body-md text-slate-gray">
+                      <p className="font-body-md text-body-md text-slate-gray dark:text-slate-400">
                         {item.description}
                       </p>
                     </div>
@@ -245,7 +252,7 @@ function Servicios() {
               </div>
               <Link
                 to="/proceso"
-                className="mt-12 group flex items-center gap-2 font-label-md text-label-md text-primary"
+                className="mt-12 group flex items-center gap-2 font-label-md text-label-md text-primary dark:text-secondary-container"
               >
                 Saber más sobre nuestro proceso
                 <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">
