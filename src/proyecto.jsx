@@ -80,9 +80,20 @@ function Proyecto() {
           <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-deep-indigo dark:text-white mb-6 leading-tight max-w-3xl">
             {project.title}
           </h1>
-          <p className="font-body-lg text-body-lg text-slate-gray dark:text-slate-400 max-w-2xl mb-10">
+          <p className="font-body-lg text-body-lg text-slate-gray dark:text-slate-400 max-w-2xl mb-6">
             {project.description}
           </p>
+
+          {project.role && (
+            <div className="inline-flex items-center gap-2 bg-surface-container-low dark:bg-white/5 px-4 py-2 rounded-lg mb-10">
+              <span className="material-symbols-outlined text-primary dark:text-secondary-container text-lg">
+                diversity_3
+              </span>
+              <span className="font-label-md text-label-md text-deep-indigo dark:text-white">
+                Rol de RovidionGroup: {project.role}
+              </span>
+            </div>
+          )}
 
           {project.images && (
             <div className="rounded-2xl overflow-hidden border border-surface-container dark:border-white/10 shadow-xl mb-16 aspect-video bg-surface-container dark:bg-white/5">
@@ -90,6 +101,41 @@ function Proyecto() {
                 images={project.images}
                 alt={`Captura de pantalla del proyecto ${project.title}`}
               />
+            </div>
+          )}
+
+          {(project.challenge || project.solution) && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-16 md:mb-20">
+              {project.challenge && (
+                <div className="bg-surface-container-low dark:bg-white/5 rounded-2xl p-6 md:p-8">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="material-symbols-outlined text-primary dark:text-secondary-container text-2xl">
+                      flag
+                    </span>
+                    <h2 className="font-headline-md text-xl text-deep-indigo dark:text-white">
+                      El reto
+                    </h2>
+                  </div>
+                  <p className="font-body-md text-body-md text-slate-gray dark:text-slate-400">
+                    {project.challenge}
+                  </p>
+                </div>
+              )}
+              {project.solution && (
+                <div className="bg-surface-container-low dark:bg-white/5 rounded-2xl p-6 md:p-8">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="material-symbols-outlined text-primary dark:text-secondary-container text-2xl">
+                      lightbulb
+                    </span>
+                    <h2 className="font-headline-md text-xl text-deep-indigo dark:text-white">
+                      La solución
+                    </h2>
+                  </div>
+                  <p className="font-body-md text-body-md text-slate-gray dark:text-slate-400">
+                    {project.solution}
+                  </p>
+                </div>
+              )}
             </div>
           )}
 
@@ -136,7 +182,7 @@ function Proyecto() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px] rounded-full" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary-container/10 blur-[100px] rounded-full" />
             <h2 className="relative z-10 font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-pure-white mb-4">
-              ¿Quieres un proyecto como este?
+              ¿Algo así?
             </h2>
             <p className="relative z-10 font-body-lg text-body-lg text-primary-fixed max-w-xl mx-auto mb-8">
               Cuéntanos tu idea y te ayudamos a construir algo hecho a tu medida, igual que a
