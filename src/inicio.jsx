@@ -1,17 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from './navbar'
 import Footer from './footer'
 import { useSeo } from './useSeo'
+import ProjectImageCarousel from './ProjectImageCarousel'
+import { projects } from './projectsData'
 import logoletra from './assets/logoletra-transparent.png'
-import pepasCoffeeMenu from './assets/pepas-coffee-menu.png'
-import pepasCoffeeAdicionales from './assets/pepas-coffee-adicionales.png'
-import pepasCoffeeHome from './assets/pepas-coffee-home.png'
-import conagroInicio from './assets/conagro-inicio.png'
-import conagroPrevio from './assets/conagro-previo.png'
-import conagroPanel from './assets/conagro-panel.png'
-import urbanFadeHero from './assets/urban-fade-hero.png'
-import urbanFadeServicios from './assets/urban-fade-servicios.png'
 
 const heroLights = [
   { top: '15%', left: '10%', size: 'w-2.5 h-2.5', color: 'bg-primary/60', glow: 'shadow-[0_0_24px_8px_rgba(0,74,198,0.5)]', anim: 'animate-particle-a', delay: '0s' },
@@ -54,191 +48,12 @@ const techStack = [
   },
 ]
 
-// TODO: reemplazar el placeholder de cada tarjeta por images: [...] cuando haya capturas reales de los proyectos.
-const projects = [
-  {
-    title: 'Pepas Coffee — Plataforma de Pedidos',
-    category: 'Desarrollo Web Full-Stack',
-    description:
-      'Sistema de pedidos para un negocio de bowls y brunch: el cliente arma su pedido a la carta, paga en línea con Wompi o contraentrega, y el equipo gestiona todo desde un panel administrativo con estados de pedido, stock y estadísticas en tiempo real.',
-    features: [
-      'Carta digital organizada por categorías, con adicionales personalizables por producto',
-      'Pago en línea con Wompi o la opción de pagar contraentrega',
-      'Panel administrativo con estados del pedido en tiempo real',
-      'Control de stock y estadísticas de ventas para el negocio',
-    ],
-    tags: ['React', 'Node.js', 'PostgreSQL', 'Wompi'],
-    images: [pepasCoffeeMenu, pepasCoffeeAdicionales, pepasCoffeeHome],
-  },
-  {
-    title: 'Conagro — Trazabilidad Agroindustrial',
-    category: 'Software a Medida',
-    description:
-      'Sistema de trazabilidad para el proceso completo del grano: desde la recepción y pesaje hasta la trilla, liquidación y despacho, con roles de usuario, auditoría y generación de certificados de calidad en PDF.',
-    features: [
-      'Registro de recepción y pesaje del grano al ingresar',
-      'Seguimiento del proceso completo: trilla, liquidación y despacho',
-      'Roles de usuario y auditoría de cada movimiento en el sistema',
-      'Generación automática de certificados de calidad en PDF',
-    ],
-    tags: ['React', 'Node.js', 'PostgreSQL', 'JWT'],
-    images: [conagroInicio, conagroPrevio, conagroPanel],
-  },
-  {
-    title: 'Urban Fade — Reservas para Barbería',
-    category: 'Desarrollo Web Full-Stack',
-    description:
-      'Plataforma de reservas para una barbería: el cliente agenda su cita eligiendo fecha, hora y servicio, con reglas de negocio como anticipación mínima, un cupo activo por día y cierre los domingos, mientras el barbero gestiona su agenda diaria y semanal desde un panel separado por rol.',
-    features: [
-      'Agenda de citas por fecha, hora y servicio, con disponibilidad en tiempo real',
-      'Reglas de negocio: anticipación mínima, un cupo activo por día y cierre dominical',
-      'Panel del barbero, separado por rol, para gestionar su agenda diaria y semanal',
-      'Historial de citas y clientes para un seguimiento ordenado del negocio',
-    ],
-    tags: ['React', 'Node.js', 'PostgreSQL', 'JWT'],
-    images: [urbanFadeHero, urbanFadeServicios],
-  },
-]
-
-function ProjectImageCarousel({ images, alt }) {
-  const [index, setIndex] = useState(0)
-
-  useEffect(() => {
-    if (images.length < 2) return
-    const interval = setInterval(() => {
-      setIndex((i) => (i + 1) % images.length)
-    }, 3500)
-    return () => clearInterval(interval)
-  }, [images])
-
-  return (
-    <div className="relative w-full h-full">
-      {images.map((src, i) => (
-        <img
-          key={src}
-          src={src}
-          alt={alt}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-            i === index ? 'opacity-100' : 'opacity-0'
-          }`}
-        />
-      ))}
-    </div>
-  )
-}
-
-function ProjectModal({ project, onClose }) {
-  useEffect(() => {
-    if (!project) return
-    const previousOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    function handleKeyDown(event) {
-      if (event.key === 'Escape') onClose()
-    }
-    document.addEventListener('keydown', handleKeyDown)
-    return () => {
-      document.body.style.overflow = previousOverflow
-      document.removeEventListener('keydown', handleKeyDown)
-    }
-  }, [project, onClose])
-
-  if (!project) return null
-
-  return (
-    <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-deep-indigo/60 dark:bg-black/70 backdrop-blur-sm"
-      onClick={onClose}
-      role="presentation"
-    >
-      <div
-        role="dialog"
-        aria-modal="true"
-        aria-label={project.title}
-        className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto bg-pure-white dark:bg-[#0b1020] rounded-2xl shadow-2xl border border-surface-container dark:border-white/10"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label="Cerrar"
-          className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-pure-white/90 dark:bg-white/10 hover:bg-pure-white dark:hover:bg-white/20 flex items-center justify-center text-deep-indigo dark:text-white shadow-md transition-colors"
-        >
-          <span className="material-symbols-outlined">close</span>
-        </button>
-
-        {project.images && (
-          <div className="aspect-video bg-surface-container dark:bg-white/5">
-            <ProjectImageCarousel
-              images={project.images}
-              alt={`Captura de pantalla del proyecto ${project.title}`}
-            />
-          </div>
-        )}
-
-        <div className="p-6 md:p-8">
-          <span className="text-primary dark:text-secondary-container font-label-md text-label-md uppercase tracking-widest">
-            {project.category}
-          </span>
-          <h3 className="font-headline-md text-xl md:text-2xl mt-2 mb-4 text-deep-indigo dark:text-white">
-            {project.title}
-          </h3>
-          <p className="font-body-md text-body-md text-slate-gray dark:text-slate-400 mb-6">
-            {project.description}
-          </p>
-
-          {project.features && (
-            <ul className="flex flex-col gap-3 mb-6">
-              {project.features.map((feature) => (
-                <li key={feature} className="flex items-start gap-3">
-                  <span className="material-symbols-outlined text-primary dark:text-secondary-container text-xl mt-0.5">
-                    check_circle
-                  </span>
-                  <span className="font-body-md text-sm text-slate-gray dark:text-slate-400">
-                    {feature}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          )}
-
-          <div className="flex gap-2 flex-wrap mb-8">
-            {project.tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-3 py-1 bg-surface-container-low dark:bg-white/5 rounded-full text-[12px] font-semibold text-slate-gray dark:text-slate-400"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          <div className="border-t border-surface-container dark:border-white/10 pt-6">
-            <p className="font-body-md text-body-md text-deep-indigo dark:text-white font-semibold mb-4">
-              ¿Quieres un proyecto como este?
-            </p>
-            <Link
-              to="/contacto"
-              onClick={onClose}
-              className="inline-flex items-center gap-3 bg-primary text-pure-white px-6 py-3 rounded-full font-label-md text-label-md hover:bg-primary/90 transition-colors duration-300"
-            >
-              Contáctanos
-              <span className="material-symbols-outlined">arrow_forward</span>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
 function Inicio() {
   useSeo({
     title: 'Inicio',
     description:
       'RovidionGroup desarrolla páginas web, aplicaciones móviles, software a la medida y marketing digital con tecnología moderna y trato directo con el equipo.',
   })
-
-  const [selectedProject, setSelectedProject] = useState(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -428,18 +243,10 @@ function Inicio() {
             </div>
             <div className="flex flex-wrap justify-center gap-gutter">
               {projects.map((project, i) => (
-                <div
+                <Link
                   key={project.title}
-                  role="button"
-                  tabIndex={0}
-                  onClick={() => setSelectedProject(project)}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault()
-                      setSelectedProject(project)
-                    }
-                  }}
-                  className="group w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-pure-white dark:bg-[#0b1020] rounded-2xl border border-surface-container dark:border-white/10 overflow-hidden hover:shadow-xl transition-all duration-300 reveal cursor-pointer"
+                  to={`/proyectos/${project.slug}`}
+                  className="group w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-pure-white dark:bg-[#0b1020] rounded-2xl border border-surface-container dark:border-white/10 overflow-hidden hover:shadow-xl transition-all duration-300 reveal"
                   style={{ transitionDelay: `${(i + 1) * 100}ms` }}
                 >
                   <div className="aspect-video bg-surface-container dark:bg-white/5 flex items-center justify-center overflow-hidden">
@@ -479,7 +286,7 @@ function Inicio() {
                       <span className="material-symbols-outlined text-base">arrow_forward</span>
                     </span>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -510,8 +317,6 @@ function Inicio() {
       </main>
 
       <Footer />
-
-      <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
     </div>
   )
 }

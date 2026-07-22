@@ -4,6 +4,7 @@ import Proceso from './proceso'
 import Servicios from './servicios'
 import Nosotros from './nosotros'
 import Contacto from './contacto'
+import Proyecto from './proyecto'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route path="/servicios" element={<Servicios />} />
       <Route path="/nosotros" element={<Nosotros />} />
       <Route path="/contacto" element={<Contacto />} />
+      <Route path="/proyectos/:slug" element={<Proyecto />} />
     </Routes>
   )
 }
